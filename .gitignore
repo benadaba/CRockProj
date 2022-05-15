@@ -32,3 +32,8 @@ override.tf.json
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+proj1/.terraform/providers/registry.terraform.io/hashicorp/aws/3.75.1/darwin_amd64/terraform-provider-aws_v3.75.1_x5 
+.terraform
+.terraform.*
+.terraform/*
