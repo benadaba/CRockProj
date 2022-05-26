@@ -148,8 +148,8 @@ resource "aws_route_table_association" "prod-priv-sub2_rt_assocation" {
 
 # 15. NAT Gateway
 resource "aws_nat_gateway" "prod-nat-gateway" {
-  #allocation_id = aws_eip.prod_iep.id
-  connectivity_type = "private"
+  allocation_id     = aws_eip.prod_iep.id
+  connectivity_type = "public"
   subnet_id         = aws_subnet.prod-pub-sub1.id
 
   tags = {
@@ -157,13 +157,13 @@ resource "aws_nat_gateway" "prod-nat-gateway" {
   }
 }
 
-/* # 16. EIP
+# 16. EIP - Elastic IP Address
 resource "aws_eip" "prod_iep" {
   vpc = true
   tags = {
-    Name = "${var.service_name}-eip"
+    Name = "elastic ip address-eip"
   }
-} */
+}
 
 
 # 17. Associate NAT gateway with PRIVATE ROUTE TABLE
